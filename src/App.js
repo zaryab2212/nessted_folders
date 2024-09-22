@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { explorer } from "./Data/myData";
+import Folder from "./components/Folder";
+import NewFolder from "./components/NewFolder";
 
-function App() {
+const App = () => {
+  const [data, setData] = useState(explorer);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <Folder dataFile={data} /> */}
+      <NewFolder data={data} />
+    </>
   );
-}
+};
 
 export default App;
